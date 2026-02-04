@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 31</title>
+    <style>
+        body { font-family: Arial; text-align: center; margin-top: 50px; }
+        #messageDiv { 
+            margin: 30px auto; 
+            padding: 20px; 
+            border: 3px dashed #2196F3; 
+            width: 350px; 
+            font-size: 22px; 
+            min-height: 50px;
+        }
+        button { padding: 15px 30px; font-size: 18px; background: #2196F3; color: white; border: none; border-radius: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h2>Task 31 - Using innerHTML</h2>
+    
+    <button id="showBtn">Show Message</button>
+    
+    <div id="messageDiv">Click the button to see the message...</div>
+
+    <script>
+        document.getElementById('showBtn').addEventListener('click', function() {
+            document.getElementById('messageDiv').innerHTML = "Welcome to JavaScript!";
+        });
+    </script>
+
+</body>
+</html>
