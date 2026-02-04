@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input type="text" id="userName" placeholder="Enter your name here">
+<button onclick="greetUser()">Submit</button>
+
+<!-- આ div માં innerHTML થી મેસેજ આવશે -->
+<div id="messageBox"></div>
+
+
+<script>
+function greetUser() {
+    // input થી નામ લો
+    const name = document.getElementById('userName').value;
+
+    // div ને સિલેક્ટ કરી innerHTML સેટ કરો
+    document.getElementById('messageBox').innerHTML = `Hello ${name}, Welcome!`;
+}
+</script>
+
+</body>
+</html>
