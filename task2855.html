@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Paragraph Update</title>
+</head>
+<body>
+    <!-- Paragraph with a unique ID so JavaScript can target it -->
+    <p id="myParagraph">This text will change when you click the button.</p>
+    
+    <!-- Button that triggers the JavaScript function when clicked -->
+    <button onclick="changeText()">Click Me!</button>
+
+    <script>
+        // JavaScript function to update the paragraph
+        function changeText() {
+            // Find the paragraph element by its ID
+            const paragraph = document.getElementById("myParagraph");
+            
+            // Update the innerHTML of the paragraph
+            paragraph.innerHTML = "Welcome to JavaScript!";
+        }
+    </script>
+</body>
+</html>
