@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 32</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 80px; }
+        #statusText { 
+            font-size: 28px; 
+            font-weight: bold; 
+            color: gray; 
+        }
+        button { 
+            padding: 15px 35px; 
+            font-size: 18px; 
+            background: #4CAF50; 
+            color: white; 
+            border: none; 
+            border-radius: 10px; 
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover { background: #45a049; }
+    </style>
+</head>
+<body>
+
+    <h2>Task 32 - Status Change</h2>
+
+    <p id="statusText">Status: Offline</p>
+
+    <button id="goOnlineBtn">Go Online</button>
+
+    <script>
+        document.getElementById('goOnlineBtn').addEventListener('click', function() {
+            const status = document.getElementById('statusText');
+            
+            status.innerHTML = "Status: Online";
+            status.style.color = "green";
+            status.style.fontWeight = "bold";
+            
+            // Optional: Button disable after click
+            this.disabled = true;
+            this.innerHTML = "You are Online Now";
+            this.style.background = "#777";
+        });
+    </script>
+
+</body>
+</html>
