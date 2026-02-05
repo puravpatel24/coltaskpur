@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculate Total Cost</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 400px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e8f5e9;
+            border-radius: 4px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Calculate Total Cost</h2>
+    
+    <input type="number" id="priceInput" placeholder="Enter Price" step="0.01">
+    <input type="number" id="quantityInput" placeholder="Enter Quantity">
+    
+    <button onclick="displayTotal()">Calculate</button>
+    
+    <div id="result"></div>
+</div>
+
+<script>
+// JavaScript function - calculateTotal
+function calculateTotal(price, quantity) {
+    return price * quantity;
+}
+
+// Display function - બટન પર ક્લિક થાય ત્યારે
+function displayTotal() {
+    const price = parseFloat(document.getElementById('priceInput').value);
+    const quantity = parseFloat(document.getElementById('quantityInput').value);
+    
+    // Input validation
+    if (isNaN(price) || isNaN(quantity) || price < 0 || quantity < 0) {
+        document.getElementById('result').innerHTML = '❌ કૃપયા સાચી કિંમત અને જથ્થો દાખલ કરો';
+        return;
+    }
+    
+    // calculateTotal ફંક્શનને કોલ કરો
+    const total = calculateTotal(price, quantity);
+    
+    // પરિણામ બતાવો
+    document.getElementById('result').innerHTML = `
+        <p>Price: ₹${price.toFixed(2)}</p>
+        <p>Quantity: ${quantity}</p>
+        <p style="color: #2e7d32; font-size: 24px;">Total Cost: ₹${total.toFixed(2)}</p>
+    `;
+}
+</script>
+
+</body>
+</html>
