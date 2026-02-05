@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VTOP Login</title>
+  <style>
+    body { font-family: Arial, sans-serif; background:#f5f6fa; display:flex; justify-content:center; padding-top:60px; }
+    .card { background:#fff; width:360px; padding:22px; border-radius:10px; box-shadow:0 8px 25px rgba(0,0,0,.08); }
+    h2 { margin:0 0 14px; }
+    label { display:block; margin-top:12px; font-weight:600; }
+    input, select { width:100%; padding:10px; margin-top:6px; box-sizing:border-box; }
+    button { width:100%; margin-top:16px; padding:10px; cursor:pointer; border:none; border-radius:8px; background:#2d7ff9; color:#fff; font-size:16px; }
+    .error { color:#d40000; font-size:13px; margin-top:4px; min-height:16px; }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>VTOP Login</h2>
+
+    <form id="loginForm" novalidate>
+      <label>Username
+        <input type="text" id="username" placeholder="Enter username" />
+      </label>
+      <div class="error" id="userErr"></div>
+
+      <label>Password
+        <input type="password" id="password" placeholder="Enter password" />
+      </label>
+      <div class="error" id="passErr"></div>
+
+      <label>User Type
+        <select id="userType">
+          <option value="">-- Select --</option>
+          <option value="Student">Student</option>
+          <option value="Faculty">Faculty</option>
+          <option value="Admin">Admin</option>
+        </select>
+      </label>
+      <div class="error" id="typeErr"></div>
+
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    const form = document.getElementById("loginForm");
+
+    // Demo authentication (not displayed on UI)
+    // You can change these values as per your requirement
+    const users = {
+      Student: { username: "student", password: "student123" },
+      Faculty: { username: "faculty", password: "faculty123" },
+      Admin:   { username: "admin",   password: "admin123" }
+    };
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const username = document.getElementById("username").value.trim();
+      const password = document.getElementById("password").value;
+      const userType = document.getElementById("userType").value;
+
+      // Clear errors
+      document.getElementById("userErr").innerHTML = "";
+      document.getElementById("passErr").innerHTML = "";
+      document.getElementById("typeErr").innerHTML = "";
+
+      let valid = true;
+
+      // Required validations
+      if (username === "") {
+        document.getElementById("userErr").innerHTML = "Username is required.";
+        valid = false;
+      }
+      if (password === "") {
+        document.getElementById("passErr").innerHTML = "Password is required.";
+        valid = false;
+      }
+      if (userType === "") {
+        document.getElementById("typeErr").innerHTML = "Please select a user type.";
+        valid = false;
+      }
+
+      if (!valid) return;
+
+      // Authentication check
+      const record = users[userType];
+      if (!record || record.username !== username || record.password !== password) {
+        document.getElementById("userErr").innerHTML = "Invalid username (for selected user type).";
+        document.getElementById("passErr").innerHTML = "Invalid password.";
+        return;
+      }
+
+      // Success: store username and redirect
+      localStorage.setItem("vtop_username_task351", username);
+      localStorage.setItem("vtop_usertype_task351", userType);
+
+      window.location.href = "dashboard351.html";
+    });
+  </script>
+</body>
+</html>
