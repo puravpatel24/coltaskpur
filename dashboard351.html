@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VTOP Dashboard</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    .box { padding:18px; border-radius:10px; background:#f1f7ff; border:1px solid #cfe3ff; max-width: 520px; }
+    button { margin-top:14px; padding:10px 14px; cursor:pointer; }
+  </style>
+</head>
+<body>
+
+  <h2>VTOP Dashboard</h2>
+  <div class="box">
+    <h3 id="welcomeText"></h3>
+    <p id="typeText"></p>
+    <button id="logoutBtn">Logout</button>
+  </div>
+
+  <script>
+    const username = localStorage.getItem("vtop_username_task351");
+    const usertype = localStorage.getItem("vtop_usertype_task351");
+
+    // If not logged in, go back to login page
+    if (!username) {
+      window.location.href = "task351.html";
+    } else {
+      document.getElementById("welcomeText").innerHTML = `Welcome ${username}`;
+      document.getElementById("typeText").innerHTML = `User Type: ${usertype}`;
+    }
+
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      localStorage.removeItem("vtop_username_task351");
+      localStorage.removeItem("vtop_usertype_task351");
+      window.location.href = "task351.html";
+    });
+  </script>
+
+</body>
+</html>
