@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Registration Validation</title>
+    <link rel="stylesheet" href="task_live.css">
+</head>
+<body>
+
+    <div class="form-card">
+        <h2>Join Us</h2>
+        <form id="regForm">
+            <div class="input-container">
+                <label>Email Address</label>
+                <div class="input-wrapper">
+                    <input type="email" id="email" placeholder="name@example.com">
+                    <span id="emailIcon" class="status-icon"></span>
+                </div>
+                <small id="emailError" class="error-text"></small>
+            </div>
+
+            <div class="input-container">
+                <label>Password</label>
+                <input type="password" id="password" placeholder="Create a strong password">
+                <div id="passwordRequirements" class="requirements">
+                    <p id="lengthReq" class="invalid">● At least 8 characters</p>
+                    <p id="charReq" class="invalid">● One number & one special character</p>
+                </div>
+            </div>
+
+            <button type="submit" id="submitBtn" disabled>Create Account</button>
+        </form>
+    </div>
+
+    <script src="task_live.js"></script>
+</body>
+</html>
