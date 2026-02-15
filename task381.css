@@ -1,0 +1,61 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f7f6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.reg-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    width: 350px;
+}
+
+h2 { margin-top: 0; color: #333; text-align: center; }
+
+.field { margin-bottom: 20px; }
+
+label { display: block; margin-bottom: 8px; font-weight: 600; color: #555; }
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #d1d1d1;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* Visual feedback on focus */
+input:focus {
+    outline: none;
+    border-color: #2ecc71; /* Green when user is typing */
+    box-shadow: 0 0 5px rgba(46, 204, 113, 0.3);
+}
+
+/* Error style if we want to toggle it */
+input.error-focus {
+    border-color: #e74c3c !important;
+    background-color: #fffafa;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+button:hover { background-color: #2980b9; }
+
+#message { text-align: center; color: #e74c3c; font-size: 14px; margin-top: 15px; }
