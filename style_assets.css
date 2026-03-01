@@ -1,0 +1,13 @@
+/* Custom class for highlighting */
+.highlight {
+    background-color: lightblue;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.content-para {
+    cursor: pointer;
+    font-family: sans-serif;
+}
