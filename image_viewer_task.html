@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Image Gallery Assignment</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="gallery_script.js"></script>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: center; padding: 20px; }
+        .gallery-container { max-width: 500px; margin: auto; border: 2px solid #ddd; padding: 15px; border-radius: 10px; }
+        
+        /* Main Large Image */
+        #main-display { width: 100%; height: 300px; object-fit: cover; border-radius: 5px; }
+        
+        /* Thumbnails Row */
+        .thumbnails { margin-top: 15px; display: flex; justify-content: center; gap: 10px; }
+        .thumb { width: 80px; height: 60px; cursor: pointer; border: 2px solid transparent; transition: 0.3s; }
+        .thumb:hover { border-color: #007bff; opacity: 0.8; }
+    </style>
+</head>
+<body>
+
+    <h3>Task: jQuery Image Gallery with Fade Effect</h3>
+
+    <div class="gallery-container">
+        <img id="main-display" src="https://picsum.photos/id/10/500/300" alt="Main View">
+
+        <div class="thumbnails">
+            <img class="thumb" src="https://picsum.photos/id/10/100/80" data-large="https://picsum.photos/id/10/500/300">
+            <img class="thumb" src="https://picsum.photos/id/20/100/80" data-large="https://picsum.photos/id/20/500/300">
+            <img class="thumb" src="https://picsum.photos/id/30/100/80" data-large="https://picsum.photos/id/30/500/300">
+        </div>
+    </div>
+
+</body>
+</html>
