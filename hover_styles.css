@@ -1,0 +1,15 @@
+/* Container styling */
+.container-div {
+    width: 300px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Image styling with transition for smooth effect */
+#target-img {
+    width: 100%;
+    height: auto;
+    opacity: 1;
+    transition: opacity 0.3s; /* CSS transition for smoothness */
+}
