@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Show Hide Task</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #myPara { border: 1px solid #ccc; padding: 8px; width: 300px; }
+    button { margin-bottom: 10px; }
+  </style>
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $("#toggleBtn").click(function(){
+        $("#myPara").toggle();   // click પર દેખાય/છુપાય
+      });
+    });
+  </script>
+</head>
+<body>
+
+  <button id="toggleBtn">Show / Hide</button>
+  <p id="myPara">This is a simple paragraph for college task. Click the button to hide or show it.</p>
+
+</body>
+</html>
