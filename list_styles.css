@@ -1,0 +1,18 @@
+/* Style for completed tasks */
+.completed {
+    text-decoration: line-through;
+    color: gray;
+}
+
+#task-list li {
+    padding: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    list-style-type: square;
+}
+
+button {
+    margin-bottom: 15px;
+    padding: 10px;
+    cursor: pointer;
+}
